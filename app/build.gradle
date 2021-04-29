@@ -68,8 +68,9 @@ dependencies {
     //permissions
     implementation 'com.vmadalin:easypermissions-ktx:0.1.0'
     implementation 'com.karumi:dexter:6.2.2'
-    //et
+    //etmaterial
     implementation "ss.anoop:awesome-textinput-layout:1.0.3"
+
     def coroutines = "1.1.1"
     def kotlinCoroutineVersion = "1.1.1"
     implementation 'com.google.android.material:material:1.1.0'
@@ -78,7 +79,15 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutineVersion"
 
-    def lottieVersion = "3.7.0"
-    implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+    //share media on apps
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:99a97f2e16'
+
+    //google ads
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation 'androidx.appcompat:appcompat:1.0.2'
+        implementation 'com.google.android.gms:play-services-ads:20.0.0'
+    }
 }
 

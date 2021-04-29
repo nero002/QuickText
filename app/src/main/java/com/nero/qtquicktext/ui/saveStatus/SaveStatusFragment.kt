@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
+import com.nero.qtquicktext.BuildConfig
 import com.nero.qtquicktext.OnItemClick
 import com.nero.qtquicktext.R
 import com.nero.qtquicktext.constant.Constant
 import com.nero.qtquicktext.ui.saveStatus.recyclerView.StatusModel
 import com.nero.qtquicktext.ui.saveStatus.recyclerView.StatusSaverAdapter
-import com.nero.qtquicktext.util.loadBitmap
-import com.nero.qtquicktext.util.shareImageFromBitmap
+import com.simplemobiletools.commons.extensions.sharePathIntent
 import kotlinx.android.synthetic.main.fragment_save_status.*
 import java.io.File
 import java.util.*
@@ -48,15 +48,12 @@ class SaveStatusFragment : Fragment(R.layout.fragment_save_status), OnItemClick 
 
         swipeRefreshLayout.setOnRefreshListener {
 
-//            tvPullDown?.visibility = View.GONE
-//            swipeRefreshLayout.visibility = View.VISIBLE
             fileList.clear()
             setUpRefreshLayoutAdapter()
             swipeRefreshLayout.isRefreshing = false
             Toast.makeText((context)!!, "Refreshed!", Toast.LENGTH_SHORT).show()
 
         }
-//        fileList.clear()
     }
 
     private fun setUpRefreshLayoutAdapter() {
@@ -90,11 +87,9 @@ class SaveStatusFragment : Fragment(R.layout.fragment_save_status), OnItemClick 
 
     override fun share(statusModel: StatusModel) {
 
-        val bitmap = loadBitmap(statusModel.getUri().toString())
 
-        if (bitmap != null) {
-            shareImageFromBitmap(bitmap,requireContext())
-        }
+        activity?.sharePathIntent(statusModel.getPath().toString(), BuildConfig.APPLICATION_ID)
+
     }
 
 
