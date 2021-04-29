@@ -9,6 +9,15 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ui.saveStatus.SaveStatusFragment">
 
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvPullDown"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/pull_down_to_refresh"-->
+<!--        android:textSize="@dimen/sp_20" />-->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvStatusViews"
         android:layout_width="match_parent"

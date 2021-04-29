@@ -2,7 +2,7 @@
     <string name="app_name">QuickText</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title">Quick Text</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
@@ -10,9 +10,11 @@
         <string name="message">Message</string>
 
         <!-- Strings used for fragments for navigation -->
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_home">Enter your Number</string>
+    <string name="status_saver">Status Saver</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="enter_the_number_you_want_to_send_whatsapp">Enter the Number you want to Send WhatsApp</string>
     <string name="statussaver">Status Saver</string>
+    <string name="pull_down_to_refresh">Pull down to Refresh</string>
+    <string name="phone_number">Phone Number</string>
 </resources>

@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.vmadalin.easypermissions.EasyPermissions
 import com.vmadalin.easypermissions.dialogs.SettingsDialog
@@ -60,11 +59,7 @@ class SplashActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks 
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: List<String>) {
-        Toast.makeText(
-            this,
-            "",
-            Toast.LENGTH_SHORT
-        ).show()
+
         setViewVisibility()
     }
 

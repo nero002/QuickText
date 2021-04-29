@@ -13,13 +13,12 @@ import com.nero.qtquicktext.R
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
-    private val NIGHT_MODE = "night_mode"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnContactOnWhatsApp.setOnClickListener {
             if (etPhoneNumber.text.toString().isEmpty()) {
-                AlertDialogBlankInput()
+                alertDialogBlankInput()
             } else {
                 //  CODE FOR COUNTRY CODE SPINNER
 
@@ -53,11 +52,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
     }
 
-    private fun AlertDialogBlankInput() {
+    private fun alertDialogBlankInput() {
         val builder = context?.let { AlertDialog.Builder(it) }
         builder?.setCancelable(true)
         builder?.setTitle("Error")
-        builder?.setMessage("Please Enter A Number")
+        builder?.setMessage("Please Enter a Number")
         val alert = builder?.create()
         alert?.window!!.setGravity(Gravity.CENTER)
         alert.show()

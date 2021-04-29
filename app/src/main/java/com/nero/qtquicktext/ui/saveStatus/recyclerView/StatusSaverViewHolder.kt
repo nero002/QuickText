@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.nero.qtquicktext.OnItemClick
 import com.nero.qtquicktext.constant.Constant
 import kotlinx.android.synthetic.main.item_layout_status_saver.view.*
 import kotlinx.coroutines.CoroutineScope
@@ -19,7 +20,8 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.channels.FileChannel
 
-class StatusSaverViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+class StatusSaverViewHolder(private val view: View, private val onItemClick: OnItemClick) :
+    RecyclerView.ViewHolder(view) {
 
     fun setData(statusModel: StatusModel, context: Context) {
 
@@ -34,6 +36,10 @@ class StatusSaverViewHolder(private val view: View) : RecyclerView.ViewHolder(vi
 
         itemView.ivDownloadID.setOnClickListener {
             download(statusModel, context)
+        }
+
+        itemView.ivShare.setOnClickListener {
+            onItemClick.share(statusModel)
         }
     }
 

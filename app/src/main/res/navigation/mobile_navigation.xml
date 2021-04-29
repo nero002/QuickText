@@ -14,12 +14,8 @@
     <fragment
         android:id="@+id/nav_status_saver"
         android:name="com.nero.qtquicktext.ui.saveStatus.SaveStatusFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/status_saver"
         tools:layout="@layout/fragment_save_status" />
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.nero.qtquicktext.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+
 </navigation>
