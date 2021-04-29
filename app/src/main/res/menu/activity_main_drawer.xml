@@ -12,6 +12,9 @@
             android:id="@+id/nav_status_saver"
             android:icon="@drawable/ic_baseline_arrow_circle_down_24"
             android:title="@string/statussaver" />
-
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_information"
+            android:title="@string/info" />
     </group>
 </menu>

@@ -17,5 +17,9 @@
         android:label="@string/status_saver"
         tools:layout="@layout/fragment_save_status" />
 
-
+    <fragment
+        android:id="@+id/nav_info"
+        android:name="com.nero.qtquicktext.ui.info.InfoFragment"
+        android:label="@string/info"
+        tools:layout="@layout/fragment_info" />
 </navigation>

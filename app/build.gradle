@@ -47,9 +47,11 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.github.myinnos:ImageSaveandShare:1.0.1'
 
     implementation('com.hbb20:ccp:2.3.2', {
         exclude group: 'com.android.support', module: 'appcompat-v7'
@@ -70,8 +72,13 @@ dependencies {
     implementation "ss.anoop:awesome-textinput-layout:1.0.3"
     def coroutines = "1.1.1"
     def kotlinCoroutineVersion = "1.1.1"
+    implementation 'com.google.android.material:material:1.1.0'
+
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutineVersion"
+
+    def lottieVersion = "3.7.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }
 

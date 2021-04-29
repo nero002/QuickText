@@ -6,10 +6,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-        <string name="status">Status</string>
-        <string name="message">Message</string>
+    <string name="status">Status</string>
+    <string name="message">Message</string>
 
-        <!-- Strings used for fragments for navigation -->
+    <!-- Strings used for fragments for navigation -->
     <string name="menu_home">Enter your Number</string>
     <string name="status_saver">Status Saver</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -17,4 +17,7 @@
     <string name="statussaver">Status Saver</string>
     <string name="pull_down_to_refresh">Pull down to Refresh</string>
     <string name="phone_number">Phone Number</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="info">Info</string>
 </resources>

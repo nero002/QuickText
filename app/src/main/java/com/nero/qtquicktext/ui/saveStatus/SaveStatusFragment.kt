@@ -1,7 +1,6 @@
 package com.nero.qtquicktext.ui.saveStatus
 
-import android.content.Context
-import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -10,14 +9,19 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import com.nero.qtquicktext.OnItemClick
 import com.nero.qtquicktext.R
 import com.nero.qtquicktext.constant.Constant
 import com.nero.qtquicktext.ui.saveStatus.recyclerView.StatusModel
 import com.nero.qtquicktext.ui.saveStatus.recyclerView.StatusSaverAdapter
+import com.nero.qtquicktext.util.loadBitmap
+import com.nero.qtquicktext.util.shareImageFromBitmap
 import kotlinx.android.synthetic.main.fragment_save_status.*
 import java.io.File
 import java.util.*
+
 
 class SaveStatusFragment : Fragment(R.layout.fragment_save_status), OnItemClick {
 
@@ -31,19 +35,28 @@ class SaveStatusFragment : Fragment(R.layout.fragment_save_status), OnItemClick 
         super.onViewCreated(view, savedInstanceState)
         swipeRefreshLayout = view.findViewById<SwipeRefreshLayout>(R.id.SrSwipeRefreshLayout)
 
+        val snackBar = Snackbar.make(
+            requireActivity().findViewById(android.R.id.content),
+            "Swipe to Refresh", Snackbar.LENGTH_LONG
+        ).setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_SLIDE)
+            .setBackgroundTint(Color.parseColor("#212121"))
+            .setAction("Hide") {
+
+            }
+        snackBar.show()
         setUpRefreshLayoutAdapter()
 
         swipeRefreshLayout.setOnRefreshListener {
 
 //            tvPullDown?.visibility = View.GONE
 //            swipeRefreshLayout.visibility = View.VISIBLE
-//            fileList.clear()
+            fileList.clear()
             setUpRefreshLayoutAdapter()
             swipeRefreshLayout.isRefreshing = false
+            Toast.makeText((context)!!, "Refreshed!", Toast.LENGTH_SHORT).show()
 
         }
-        fileList.clear()
-        Toast.makeText((context)!!, "Refreshing!", Toast.LENGTH_SHORT).show()
+//        fileList.clear()
     }
 
     private fun setUpRefreshLayoutAdapter() {
@@ -75,16 +88,16 @@ class SaveStatusFragment : Fragment(R.layout.fragment_save_status), OnItemClick 
     }
 
 
-
     override fun share(statusModel: StatusModel) {
-        val sendIntent: Intent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(
-                Intent.EXTRA_TEXT,
-                statusModel.getUri()
-            )
+
+        val bitmap = loadBitmap(statusModel.getUri().toString())
+
+        if (bitmap != null) {
+            shareImageFromBitmap(bitmap,requireContext())
         }
-        val shareIntent = Intent.createChooser(sendIntent, null)
-        startActivity(shareIntent)
     }
+
+
 }
+
+
