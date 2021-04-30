@@ -70,7 +70,7 @@ class SaveStatusFragment : Fragment(R.layout.fragment_save_status), OnItemClick 
         val targetPath =
             Environment.getExternalStorageDirectory().absolutePath + Constant.FOLDER_NAME.toString() + "Media/.Statuses/"
         val targetDir = File(targetPath)
-        files = targetDir.listFiles()
+        files = targetDir.listFiles()!!
         for (i in 1 until files.size) {
 
             val file = files[i]
