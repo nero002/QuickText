@@ -17,7 +17,7 @@ import com.nero.qtquicktext.R
 import com.nero.qtquicktext.constant.Constant
 import com.nero.qtquicktext.ui.saveStatus.recyclerView.StatusModel
 import com.nero.qtquicktext.ui.saveStatus.recyclerView.StatusSaverAdapter
-import com.simplemobiletools.commons.extensions.sharePathIntent
+import com.nero.qtquicktext.util.sharePath
 import kotlinx.android.synthetic.main.fragment_save_status.*
 import java.io.File
 import java.util.*
@@ -87,8 +87,8 @@ class SaveStatusFragment : Fragment(R.layout.fragment_save_status), OnItemClick 
 
     override fun share(statusModel: StatusModel) {
 
+        activity?.sharePath(statusModel.getPath().toString(), BuildConfig.APPLICATION_ID)
 
-        activity?.sharePathIntent(statusModel.getPath().toString(), BuildConfig.APPLICATION_ID)
 
     }
 

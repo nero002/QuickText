@@ -13,66 +13,61 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:gravity="center"
-
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/cpp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/adView"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="@dimen/dp_10"
+            app:ccp_defaultNameCode="IN"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/etExpand"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+            android:id="@+id/etExpand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_toEndOf="@+id/cpp"
+            android:padding="16dp"
+            app:borderColor="#BF9108"
+            app:borderWidth="2dp"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cpp"
             app:layout_constraintTop_toTopOf="parent">
 
-
-            <com.hbb20.CountryCodePicker
-                android:id="@+id/cpp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dp_10"
-                app:ccp_defaultNameCode="IN" />
-
-
-            <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
-                android:id="@+id/etExpand"
+            <EditText
+                android:id="@+id/etPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/dp_10"
-                android:layout_toEndOf="@+id/cpp"
-                android:padding="16dp"
-                app:borderColor="#BF9108"
-                app:borderWidth="2dp"
-                app:cornerRadius="8dp">
+                android:hint="@string/phone_number"
+                android:inputType="phone" />
+        </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
 
-                <EditText
-                    android:id="@+id/etPhoneNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/phone_number"
-                    android:inputType="phone" />
-            </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
-
-            <Button
-                android:id="@+id/btnContactOnWhatsApp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/etExpand"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="125dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="@dimen/dp_15"
-                android:layout_toEndOf="@+id/cpp"
-                android:background="@drawable/custom"
-                android:elevation="4dp"
-                android:paddingLeft="25dp"
-                android:paddingRight="25dp"
-                android:text="@string/message"
-                android:textColor="@color/white" />
-        </RelativeLayout>
-
+        <Button
+            android:id="@+id/btnContactOnWhatsApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etExpand"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:layout_toEndOf="@+id/cpp"
+            android:background="@drawable/custom"
+            android:elevation="4dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:text="@string/message"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/etExpand"
+            app:layout_constraintTop_toBottomOf="@+id/etExpand" />
 
         <com.google.android.gms.ads.AdView
-
             android:id="@+id/adView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,5 +80,4 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>

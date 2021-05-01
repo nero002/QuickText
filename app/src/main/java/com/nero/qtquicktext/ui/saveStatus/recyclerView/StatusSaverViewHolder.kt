@@ -16,10 +16,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
-import java.io.FileInputStream
-import java.io.FileOutputStream
-import java.io.IOException
-import java.nio.channels.FileChannel
 
 class StatusSaverViewHolder(private val view: View, private val onItemClick: OnItemClick) :
     RecyclerView.ViewHolder(view) {
@@ -66,9 +62,6 @@ class StatusSaverViewHolder(private val view: View, private val onItemClick: OnI
         }
 
     }
-
-
-
 
 
     private fun checkFolder() {

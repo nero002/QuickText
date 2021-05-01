@@ -20,4 +20,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="info">Info</string>
+    <string name="_2_check_inside_a_save_status_if_not_there_then_pull_down_to_refresh">2. Check inside a save status if not there then Pull Down to refresh.</string>
+    <string name="_1_go_and_see_the_status_from_whatsapp">1. Go and see the status from WhatsApp</string>
+    <string name="steps">Steps:</string>
 </resources>

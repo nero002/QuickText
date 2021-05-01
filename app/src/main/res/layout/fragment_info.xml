@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,13 +32,13 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/dp_10"
             android:drawablePadding="@dimen/dp_10"
-            android:text="Steps:"
+            android:text="@string/steps"
             android:textSize="@dimen/sp_20" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1. Go and see the status from WhatsApp"
+            android:text="@string/_1_go_and_see_the_status_from_whatsapp"
             android:textSize="@dimen/sp_20" />
 
         <TextView
@@ -45,27 +46,71 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="2. Check inside a save status if not there then Pull Down to refresh."
+            android:text="@string/_2_check_inside_a_save_status_if_not_there_then_pull_down_to_refresh"
             android:textAlignment="center"
             android:textSize="@dimen/sp_20" />
 
 
     </LinearLayout>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/dp_20"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tvShare1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/dp_10"
             android:gravity="center"
-            android:text="Please share the app and review on PlayStore"
-            android:textSize="18sp" />
+            android:text="Please"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvShare"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/tvShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@id/tvShare1"
+            android:gravity="center"
+            android:text=" share "
+            android:textColor="@color/md_blue"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvShare2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvShare1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvShare2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_toLeftOf="@id/tvShare"
+            android:layout_toRightOf="@id/tvShare1"
+            android:gravity="center"
+            android:text="the app and review on PlayStore"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvShare"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>
