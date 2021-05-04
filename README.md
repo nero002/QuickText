@@ -4,13 +4,9 @@
  
 
 ## Building the Project
-We use git submodules and so when you are checking out the app, you'll need to ensure the submodules are initialized properly. You can use the `--recursive` flag when cloning the project to do this.
+If you are checking out the app
 
-    git clone --recursive https://github.com/nero002/QuickText.git
-
-Alternatively, if you already have the project checked out, you can initialize the submodules manually.
-
-    git submodule update --init
+    git clone https://github.com/nero002/QuickText.git
     
 
 ## Screenshots 
