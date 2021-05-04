@@ -1,6 +1,6 @@
 # Quick Text 
 
-<img src="https://user-images.githubusercontent.com/38027375/116977007-82f96900-acdf-11eb-8a9f-8eae445b42b8.png" width="320">
+<img src="https://user-images.githubusercontent.com/38027375/116977007-82f96900-acdf-11eb-8a9f-8eae445b42b8.png" width="200">
  
 
 ## Building the Project
